@@ -24,6 +24,7 @@ module.exports = function (app) {
       const initUnit = convertHandler.getUnit(input);
       console.log(initUnit);
       const returnNum = convertHandler.convert(initNum, initUnit);
+      console.log(returnNum);
       const returnUnit = convertHandler.getReturnUnit(initUnit);
       console.log(returnUnit);
       const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
