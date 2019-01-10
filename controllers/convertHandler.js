@@ -71,7 +71,7 @@ function ConvertHandler() {
         resultString = "L";
         break;
       default: 
-        resultString = "Please enter a valid unit of measurement.";
+        resultString = "invalid unit";
     }
     return resultString;
   };
@@ -134,7 +134,7 @@ function ConvertHandler() {
     
     switch(initUnit) {
       case "mi":
-        
+        result = initNum * miToKm;
         break;
       case "ki":
         
