@@ -13,11 +13,15 @@ function ConvertHandler() {
     let resultString = input.substring(result.index,);
     resultString = resultString.toLowerCase();
     switch(resultString) {
+      case "mi":
+        break;
       case "mile":
         resultString = "mi";
         break;
       case "miles":
         resultString = "mi";
+        break;
+      case "ki":
         break;
       case "kilometers":
         resultString = "ki";
@@ -25,11 +29,18 @@ function ConvertHandler() {
       case "kilometer":
         resultString = "ki";
         break;
+      case "lb":
+        resultString = "lbs";
+        break;
+      case "lbs":
+        break;
       case "pound":
         resultString = "lbs";
         break;
       case "pounds":
         resultString = "lbs";
+        break;
+      case "kg":
         break;
       case "kilogram":
         resultString = "kg";
@@ -37,8 +48,7 @@ function ConvertHandler() {
       case "kilograms":
         resultString = "kg";
         break;
-      case "lb":
-        resultString = "lbs";
+      case "gal":
         break;
       case "gallon":
         resultString = "gal";
@@ -48,6 +58,8 @@ function ConvertHandler() {
         break;
       case "gals": 
         resultString = "gal";
+        break;
+      case "L":
         break;
       case "l":
         resultString = "L";
@@ -145,7 +157,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result = initUnit + " " + initNum + " converts to " + returnNum + " " + returnUnit;
+    let result = initNum + " " + initUnit + " converts to " + returnNum + " " + returnUnit;
     return result;
   };
   

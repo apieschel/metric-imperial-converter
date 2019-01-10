@@ -18,18 +18,28 @@ module.exports = function (app) {
   app.route('/api/convert')
     .get(function (req, res){
       const input = req.query.input;
-      console.log(input);
       const initNum = convertHandler.getNum(input);
-      console.log(initNum);
       const initUnit = convertHandler.getUnit(input);
-      console.log(initUnit);
       const returnNum = convertHandler.convert(initNum, initUnit);
-      console.log(returnNum);
       const returnUnit = convertHandler.getReturnUnit(initUnit);
+      const initSpelled = convertHandler.spellOutUnit(initUnit);
+      const returnSpelled = convertHandler.spellOutUnit(returnUnit);
+      const toString = convertHandler.getString(initNum, initSpelled, returnNum, returnSpelled);
+    
+      console.log(input);
+      console.log(initNum);
+      console.log(initUnit);
+      console.log(returnNum);
       console.log(returnUnit);
-      const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+      console.log(toString);
       
-      //res.json
+      res.json({
+        initNum: initNum,
+        initUnit: initUnit,
+        returnNum: returnNum,
+        returnUnit: returnUnit,
+        string: toString
+      });
     });
     
 };
