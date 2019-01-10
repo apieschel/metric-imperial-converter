@@ -10,9 +10,7 @@ module.exports = function (app) {
     .get(function (req, res){
       const input = req.query.input;
       const initUnit = convertHandler.getUnit(input);
-      console.log(initUnit);     
       const initNum = convertHandler.getNum(input);
-      console.log(initNum); 
 
       if(initUnit === "invalid unit" && initNum === "invalid number") {
         res.json("invalid number and unit");
@@ -27,10 +25,6 @@ module.exports = function (app) {
           const initSpelled = convertHandler.spellOutUnit(initUnit);
           const returnSpelled = convertHandler.spellOutUnit(returnUnit);
           const toString = convertHandler.getString(initNum, initSpelled, returnNum, returnSpelled);
-
-          console.log(returnNum);
-          console.log(returnUnit);
-          console.log(toString);
 
           res.json({
             initNum: initNum,

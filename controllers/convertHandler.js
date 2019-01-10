@@ -13,6 +13,10 @@ function ConvertHandler() {
         resultString = 1;
       } else {
         resultString = input.substring(0, result.index);
+        // test for a forward slash by itself
+        if(resultString === "/") {
+          return "invalid number"
+        }
         // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
         if(/[^0-9/.]/.test(resultString)) {
           return "invalid number";
