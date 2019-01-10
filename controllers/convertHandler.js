@@ -140,13 +140,13 @@ function ConvertHandler() {
         
         break;
       case "lbs":
-        
+        result = initNum * lbsToKg;
         break;
       case "kg":
         
         break;
       case "gal":
-        
+        result = initNum * galToL;
         break;
       case "L":
         
