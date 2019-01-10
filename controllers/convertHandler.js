@@ -20,13 +20,13 @@ function ConvertHandler() {
         resultString = "mi";
         break;
       case "pound":
-        resultString = "lb";
+        resultString = "lbs";
         break;
       case "pounds":
-        resultString = "lb";
+        resultString = "lbs";
         break;
-      case "lbs":
-        resultString = "lb";
+      case "lb":
+        resultString = "lbs";
         break;
       case "gallon":
         resultString = "gal";
@@ -47,11 +47,11 @@ function ConvertHandler() {
       case "mi":
         result = "ki";
         break;
-      case "lb":
+      case "lbs":
         result = "kg";
         break;
       case "gal":
-        result = "l";
+        result = "L";
         break;
     }
     return result;
