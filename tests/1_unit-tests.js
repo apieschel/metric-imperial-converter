@@ -1,23 +1,15 @@
-/*
-*
-*
-*       FILL IN EACH UNIT TEST BELOW COMPLETELY
-*       -----[Keep the tests in the same order!]----
-*       (if additional are added, keep them at the very end!)
-*/
-
-var chai = require('chai');
-var assert = chai.assert;
-var ConvertHandler = require('../controllers/convertHandler.js');
-
-var convertHandler = new ConvertHandler();
+const chai = require('chai');
+const assert = chai.assert;
+const expect = chai.expect;
+const ConvertHandler = require('../controllers/convertHandler.js');
+const convertHandler = new ConvertHandler();
 
 suite('Unit Tests', function(){
   
   suite('Function convertHandler.getNum(input)', function() {
     
     test('Whole number input', function(done) {
-      var input = '32L';
+      let input = '32L';
       assert.equal(convertHandler.getNum(input),32);
       done();
     });
