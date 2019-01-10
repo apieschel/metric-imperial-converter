@@ -10,21 +10,21 @@ module.exports = function (app) {
     .get(function (req, res){
       const input = req.query.input;
       const initUnit = convertHandler.getUnit(input);
-      
-      if(initUnit === "Invalid Unit of Measurement.") {
+      console.log(initUnit);
+    
+      if(initUnit === "Invalid unit of measurement.") {
         res.json(initUnit);
       }  else {
         
         const initNum = convertHandler.getNum(input);
+        console.log(initNum);
+        
         const returnNum = convertHandler.convert(initNum, initUnit);
         const returnUnit = convertHandler.getReturnUnit(initUnit);
         const initSpelled = convertHandler.spellOutUnit(initUnit);
         const returnSpelled = convertHandler.spellOutUnit(returnUnit);
         const toString = convertHandler.getString(initNum, initSpelled, returnNum, returnSpelled);
 
-        console.log(input);
-        console.log(initNum);
-        console.log(initUnit);
         console.log(returnNum);
         console.log(returnUnit);
         console.log(toString);
