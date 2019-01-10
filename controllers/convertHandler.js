@@ -1,22 +1,24 @@
 function ConvertHandler() {
   
-  this.getNum = function(input) {
-    let regexp = /[a-z]/i;
-    let result = regexp.exec(input);
-    let resultString = input.substring(result.index,);
-    return resultString.toLowerCase();
-  };
-  
-  this.getUnit = function(input) {
+  this.getNum = function(input) {  
     let regexp = /[a-z]/i;
     let result = regexp.exec(input);
     let resultString = input.substring(0, result.index);
     return resultString.trim();
   };
   
+  this.getUnit = function(input) {
+    let regexp = /[a-z]/i;
+    let result = regexp.exec(input);
+    let resultString = input.substring(result.index,);
+    return resultString.toLowerCase();
+  };
+  
   this.getReturnUnit = function(initUnit) {
-    var result;
-    
+    let result;
+    if(initUnit === "mi") {
+      result = "ki";
+    }
     return result;
   };
 
