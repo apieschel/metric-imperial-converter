@@ -10,7 +10,7 @@ function ConvertHandler() {
     } else {
       resultString = input.substring(0, result.index);
     }
-    return parseFloat(resultString);
+    return eval(resultString);
   };
   
   this.getUnit = function(input) {
@@ -163,7 +163,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result = initNum + " " + initUnit + " converts to " + returnNum + " " + returnUnit;
+    let result = initNum.toFixed(5) + " " + initUnit + " converts to " + returnNum.toFixed(5) + " " + returnUnit;
     return result;
   };
   
