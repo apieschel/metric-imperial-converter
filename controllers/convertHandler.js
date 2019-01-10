@@ -8,16 +8,20 @@ function ConvertHandler() {
     let result = regexp.exec(input.trim());
     let resultString; 
     
-    if(result.index === 0) {
-      resultString = 1;
-    } else {
-      resultString = input.substring(0, result.index);
-      // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
-      if(/[^0-9/.]/.test(resultString)) {
-        return "invalid number";
+    if(result !== null) {
+      if(result.index === 0) {
+        resultString = 1;
+      } else {
+        resultString = input.substring(0, result.index);
+        // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
+        if(/[^0-9/.]/.test(resultString)) {
+          return "invalid number";
+        }
       }
+      return parseFloat(eval(resultString).toFixed(5));
+    } else {
+    
     }
-    return parseFloat(eval(resultString).toFixed(5));
   };
   
   this.getUnit = function(input) {

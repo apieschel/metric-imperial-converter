@@ -10,16 +10,17 @@ module.exports = function (app) {
     .get(function (req, res){
       const input = req.query.input;
       const initUnit = convertHandler.getUnit(input);
-      console.log(initUnit);
-    
-      if(initUnit === "invalid unit") {
+      console.log(initUnit);     
+      const initNum = convertHandler.getNum(input);
+      console.log(initNum); 
+
+      if(initUnit === "invalid unit" && initNum === "invalid number") {
+        res.json("invalid number and unit");
+      } else if(initUnit === "invalid unit") {
         res.json(initUnit);
-      }  else {
-        
-        const initNum = convertHandler.getNum(input);
-        if(initNum === "invalid number") {
-          res.json(initNum);
-        } else {
+      } else if (initNum === "invalid number") {
+        res.json("invalid number");
+      } else {
         
           const returnNum = convertHandler.convert(initNum, initUnit);
           const returnUnit = convertHandler.getReturnUnit(initUnit);
@@ -39,6 +40,6 @@ module.exports = function (app) {
             string: toString
           });
         }
-      }
+      
     });
 };
