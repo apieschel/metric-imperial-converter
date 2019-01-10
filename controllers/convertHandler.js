@@ -11,13 +11,20 @@ function ConvertHandler() {
     let regexp = /[a-z]/i;
     let result = regexp.exec(input);
     let resultString = input.substring(result.index,);
-    return resultString.toLowerCase();
+    resultString = resultString.toLowerCase();
+    return resultString;
   };
   
   this.getReturnUnit = function(initUnit) {
     let result;
-    if(initUnit === "mi") {
-      result = "ki";
+    switch(initUnit) {
+      case "mi":
+        result = "ki"
+        break;
+      case "lbs":
+        result = "kg"
+      case "gal":
+        result = "l"
     }
     return result;
   };
