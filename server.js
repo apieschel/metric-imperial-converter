@@ -1,15 +1,35 @@
 'use strict';
 
-var express     = require('express');
-var bodyParser  = require('body-parser');
-var expect      = require('chai').expect;
+const express     = require('express');
+const bodyParser  = require('body-parser');
+const expect      = require('chai').expect;
 var cors        = require('cors');
 
 var apiRoutes         = require('./routes/api.js');
 var fccTestingRoutes  = require('./routes/fcctesting.js');
 var runner            = require('./test-runner');
 
+const helmet = require('helmet');
+const mongoose = require('mongoose');
 var app = express();
+
+app.use(helmet({
+  frameguard: {
+     action: 'deny'
+  },
+  noCache: true,
+  hidePoweredBy: { 
+    setTo: 'PHP 4.2.0' 
+  },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://code.jquery.com"],
+      imgSrc: ["'self'", "https://hyperdev.com", "https://glitch.com"]
+    }
+   }
+ }));
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
