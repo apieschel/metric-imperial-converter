@@ -1,16 +1,17 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    let regexp = /[a-z]/;
+    let regexp = /[a-z]/i;
     let result = regexp.exec(input);
-    
-    return result;
+    let resultString = input.substring(result.index,);
+    return resultString.toLowerCase();
   };
   
   this.getUnit = function(input) {
-    var result;
-    
-    return result;
+    let regexp = /[a-z]/i;
+    let result = regexp.exec(input);
+    let resultString = input.substring(0, result.index);
+    return resultString.trim();
   };
   
   this.getReturnUnit = function(initUnit) {
