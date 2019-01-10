@@ -12,6 +12,32 @@ function ConvertHandler() {
     let result = regexp.exec(input);
     let resultString = input.substring(result.index,);
     resultString = resultString.toLowerCase();
+    switch(resultString) {
+      case "mile":
+        resultString = "mi";
+        break;
+      case "miles":
+        resultString = "mi";
+        break;
+      case "pound":
+        resultString = "lb";
+        break;
+      case "pounds":
+        resultString = "lb";
+        break;
+      case "lbs":
+        resultString = "lb";
+        break;
+      case "gallon":
+        resultString = "gal";
+        break;
+      case "gallons":
+        resultString = "gal";
+        break;
+      case "gals": 
+        resultString = "gal";
+        break;
+    }
     return resultString;
   };
   
@@ -19,12 +45,14 @@ function ConvertHandler() {
     let result;
     switch(initUnit) {
       case "mi":
-        result = "ki"
+        result = "ki";
         break;
-      case "lbs":
-        result = "kg"
+      case "lb":
+        result = "kg";
+        break;
       case "gal":
-        result = "l"
+        result = "l";
+        break;
     }
     return result;
   };
