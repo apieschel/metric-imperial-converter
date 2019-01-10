@@ -2,9 +2,15 @@ function ConvertHandler() {
   
   this.getNum = function(input) {  
     let regexp = /[a-z]/i;
-    let result = regexp.exec(input);
-    let resultString = input.substring(0, result.index);
-    return resultString.trim();
+    let result = regexp.exec(input.trim());
+    let resultString; 
+    
+    if(result.index === 0) {
+      resultString = 0;
+    } else {
+      resultString = input.substring(0, result.index);
+    }
+    return parseFloat(resultString);
   };
   
   this.getUnit = function(input) {
@@ -137,19 +143,19 @@ function ConvertHandler() {
         result = initNum * miToKm;
         break;
       case "ki":
-        
+        result = initNum / miToKm;
         break;
       case "lbs":
         result = initNum * lbsToKg;
         break;
       case "kg":
-        
+        result = initNum / lbsToKg;
         break;
       case "gal":
         result = initNum * galToL;
         break;
       case "L":
-        
+        result = initNum / galToL;
         break;
     }
     
