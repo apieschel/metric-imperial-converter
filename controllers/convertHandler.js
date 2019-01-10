@@ -12,6 +12,10 @@ function ConvertHandler() {
       resultString = 1;
     } else {
       resultString = input.substring(0, result.index);
+      // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
+      if(/[^0-9/.]/.test(resultString)) {
+        return "invalid number";
+      }
     }
     return parseFloat(eval(resultString).toFixed(5));
   };
@@ -19,6 +23,11 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let regexp = /[a-z]/i;
     let result = regexp.exec(input);
+    
+    if(result === null) {
+      return "invalid unit";
+    }
+    
     let resultString = input.substring(result.index,);
     resultString = resultString.toLowerCase();
     switch(resultString) {
@@ -80,7 +89,7 @@ function ConvertHandler() {
         resultString = "L";
         break;
       default: 
-        resultString = "Invalid unit of measurement.";
+        resultString = "invalid unit";
     }
     return resultString;
   };

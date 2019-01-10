@@ -12,30 +12,33 @@ module.exports = function (app) {
       const initUnit = convertHandler.getUnit(input);
       console.log(initUnit);
     
-      if(initUnit === "Invalid unit of measurement.") {
+      if(initUnit === "invalid unit") {
         res.json(initUnit);
       }  else {
         
         const initNum = convertHandler.getNum(input);
-        console.log(initNum);
+        if(initNum === "invalid number") {
+          res.json(initNum);
+        } else {
         
-        const returnNum = convertHandler.convert(initNum, initUnit);
-        const returnUnit = convertHandler.getReturnUnit(initUnit);
-        const initSpelled = convertHandler.spellOutUnit(initUnit);
-        const returnSpelled = convertHandler.spellOutUnit(returnUnit);
-        const toString = convertHandler.getString(initNum, initSpelled, returnNum, returnSpelled);
+          const returnNum = convertHandler.convert(initNum, initUnit);
+          const returnUnit = convertHandler.getReturnUnit(initUnit);
+          const initSpelled = convertHandler.spellOutUnit(initUnit);
+          const returnSpelled = convertHandler.spellOutUnit(returnUnit);
+          const toString = convertHandler.getString(initNum, initSpelled, returnNum, returnSpelled);
 
-        console.log(returnNum);
-        console.log(returnUnit);
-        console.log(toString);
+          console.log(returnNum);
+          console.log(returnUnit);
+          console.log(toString);
 
-        res.json({
-          initNum: initNum,
-          initUnit: initUnit,
-          returnNum: returnNum,
-          returnUnit: returnUnit,
-          string: toString
-        });
+          res.json({
+            initNum: initNum,
+            initUnit: initUnit,
+            returnNum: returnNum,
+            returnUnit: returnUnit,
+            string: toString
+          });
+        }
       }
     });
 };
