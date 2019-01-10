@@ -1,7 +1,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
+    let regexp = /[a-z]/;
+    let result = regexp.exec(input);
     
     return result;
   };
