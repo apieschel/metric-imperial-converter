@@ -11,7 +11,7 @@ module.exports = function (app) {
       const input = req.query.input;
       const initUnit = convertHandler.getUnit(input);
       
-      if(initUnit === "invalid unit") {
+      if(initUnit === "Invalid Unit of Measurement.") {
         res.json(initUnit);
       }  else {
         

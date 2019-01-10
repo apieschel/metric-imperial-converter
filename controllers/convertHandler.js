@@ -1,16 +1,19 @@
 function ConvertHandler() {
   
+  // helpful answer on rounding to the fifth decimal place 
+  // https://stackoverflow.com/questions/7312468/javascript-round-to-a-number-of-decimal-places-but-strip-extra-zeros
+  
   this.getNum = function(input) {  
     let regexp = /[a-z]/i;
     let result = regexp.exec(input.trim());
     let resultString; 
     
     if(result.index === 0) {
-      resultString = 0;
+      resultString = 1;
     } else {
       resultString = input.substring(0, result.index);
     }
-    return eval(resultString);
+    return parseFloat(eval(resultString).toFixed(5));
   };
   
   this.getUnit = function(input) {
@@ -77,7 +80,7 @@ function ConvertHandler() {
         resultString = "L";
         break;
       default: 
-        resultString = "invalid unit";
+        resultString = "Invalid unit of measurement.";
     }
     return resultString;
   };
@@ -159,11 +162,11 @@ function ConvertHandler() {
         break;
     }
     
-    return result;
+    return parseFloat(result.toFixed(5));
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result = initNum.toFixed(5) + " " + initUnit + " converts to " + returnNum.toFixed(5) + " " + returnUnit;
+    let result = parseFloat(initNum.toFixed(5)) + " " + initUnit + " converts to " + parseFloat(returnNum.toFixed(5)) + " " + returnUnit;
     return result;
   };
   
