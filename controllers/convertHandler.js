@@ -20,7 +20,11 @@ function ConvertHandler() {
       }
       return parseFloat(eval(resultString).toFixed(5));
     } else {
-    
+        if(/[^0-9/.]/.test(input)) {
+          return "invalid number";
+        } else {
+          return parseFloat(eval(input).toFixed(5));
+        }
     }
   };
   
