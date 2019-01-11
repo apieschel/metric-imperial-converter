@@ -10,36 +10,38 @@ suite('Unit Tests', function(){
     
     test('Whole number input', function(done) {
       let input = '32L';
-      assert.equal(convertHandler.getNum(input),32);
+      assert.equal(convertHandler.getNum(input), 32);
       done();
     });
     
     test('Decimal Input', function(done) {
       let input = '32.5L';
-      assert.equal(convertHandler.getNum(input),32.5);
+      assert.equal(convertHandler.getNum(input), 32.5);
       done();
     });
     
     test('Fractional Input', function(done) {
       let input = '3/5L';
-      assert.equal(convertHandler.getNum(input),0.6);
+      assert.equal(convertHandler.getNum(input), 0.6);
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
       let input = '3/5.5L';
-      assert.equal(convertHandler.getNum(input),0.54545);
+      assert.equal(convertHandler.getNum(input), 0.54545);
       done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      let input = '3/5/6L';
+      assert.equal(convertHandler.getNum(input), "invalid number");
+      done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      let input = 'L';
+      assert.equal(convertHandler.getNum(input), 1);
+      done();
     }); 
     
   });

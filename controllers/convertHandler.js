@@ -17,6 +17,10 @@ function ConvertHandler() {
         if(resultString === "/") {
           return "invalid number"
         }
+        // test for double fractions
+        if(resultString.match(/\//g).length > 1) {
+          return "invalid number"
+        }
         // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
         if(/[^0-9/.]/.test(resultString)) {
           return "invalid number";
