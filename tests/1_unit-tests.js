@@ -15,18 +15,21 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      let input = '32.5L';
+      assert.equal(convertHandler.getNum(input),32.5);
+      done();
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+      let input = '3/5L';
+      assert.equal(convertHandler.getNum(input),0.6);
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      let input = '3/5.5L';
+      assert.equal(convertHandler.getNum(input),0.54545);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
