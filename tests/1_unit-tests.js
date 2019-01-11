@@ -101,36 +101,36 @@ suite('Unit Tests', function(){
     
     test('L to Gal', function(done) {
       let input = [5, 'L'];
-      let expected = 18.9271;
-      assert.equal(convertHandler.convert(input[0],input[1]), expected);
+      let expected = 1.32086;
+      assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Mi to Km', function(done) {
       let input = [5, 'mi'];
-      let expected = 18.9271;
-      assert.equal(convertHandler.convert(input[0],input[1]), expected);
+      let expected = 8.0467;
+      assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Km to Mi', function(done) {
-      let input = [5, 'gal'];
+      let input = [5, 'km'];
       let expected = 18.9271;
-      assert.equal(convertHandler.convert(input[0],input[1]), expected);
+      assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Lbs to Kg', function(done) {
-      let input = [5, 'gal'];
+      let input = [5, 'lbs'];
       let expected = 18.9271;
-      assert.equal(convertHandler.convert(input[0],input[1]), expected);
+      assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Kg to Lbs', function(done) {
-      let input = [5, 'gal'];
+      let input = [5, 'kg'];
       let expected = 18.9271;
-      assert.equal(convertHandler.convert(input[0],input[1]), expected);
+      assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     

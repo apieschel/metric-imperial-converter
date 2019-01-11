@@ -18,8 +18,10 @@ function ConvertHandler() {
           return "invalid number"
         }
         // test for double fractions
-        if(resultString.match(/\//g).length > 1) {
-          return "invalid number"
+        if(resultString.match(/\//g)) {
+          if(resultString.match(/\//g).length > 1) {
+            return "invalid number"
+          }
         }
         // test for any non-aplphanumerica special characters that aren't the "/" in a fraction or the "." in a decimal
         if(/[^0-9/.]/.test(resultString)) {
@@ -55,13 +57,13 @@ function ConvertHandler() {
       case "miles":
         resultString = "mi";
         break;
-      case "ki":
+      case "km":
         break;
       case "kilometers":
-        resultString = "ki";
+        resultString = "km";
         break;
       case "kilometer":
-        resultString = "ki";
+        resultString = "km";
         break;
       case "lb":
         resultString = "lbs";
@@ -114,9 +116,9 @@ function ConvertHandler() {
     let result;
     switch(initUnit) {
       case "mi":
-        result = "ki";
+        result = "km";
         break;
-      case "ki":
+      case "km":
         result = "mi";
         break;
       case "lbs":
@@ -141,7 +143,7 @@ function ConvertHandler() {
       case "mi":
         result = "miles";
         break;
-      case "ki":
+      case "km":
         result = "kilometers";
         break;
       case "lbs":
@@ -170,7 +172,7 @@ function ConvertHandler() {
       case "mi":
         result = initNum * miToKm;
         break;
-      case "ki":
+      case "km":
         result = initNum / miToKm;
         break;
       case "lbs":
