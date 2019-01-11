@@ -115,21 +115,21 @@ suite('Unit Tests', function(){
     
     test('Km to Mi', function(done) {
       let input = [5, 'km'];
-      let expected = 18.9271;
+      let expected = 3.10686;
       assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Lbs to Kg', function(done) {
       let input = [5, 'lbs'];
-      let expected = 18.9271;
+      let expected = 2.26796;
       assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
     
     test('Kg to Lbs', function(done) {
       let input = [5, 'kg'];
-      let expected = 18.9271;
+      let expected = 11.02312;
       assert.equal(convertHandler.convert(input[0], input[1]), expected);
       done();
     });
