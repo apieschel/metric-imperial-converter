@@ -3,8 +3,8 @@ function ConvertHandler() {
   // https://stackoverflow.com/questions/7312468/javascript-round-to-a-number-of-decimal-places-but-strip-extra-zeros
   
   this.getNum = function(input) {  
-    let regexp = /[a-z]/i;
-    let result = regexp.exec(input.trim());
+    const regexp = /[a-z]/i;
+    const result = regexp.exec(input.trim());
     let resultString; 
     
     if(result !== null) {
