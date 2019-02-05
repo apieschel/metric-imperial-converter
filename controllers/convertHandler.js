@@ -38,8 +38,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    let regexp = /[a-z]/i;
-    let result = regexp.exec(input);
+    const regexp = /[a-z]/i;
+    const result = regexp.exec(input);
     
     if(result === null) {
       return "invalid unit";
@@ -47,6 +47,8 @@ function ConvertHandler() {
     
     let resultString = input.substring(result.index,);
     resultString = resultString.toLowerCase();
+    
+    // standardize different versions of the same unit
     switch(resultString) {
       case "mi":
         break;
