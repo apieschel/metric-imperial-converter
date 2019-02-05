@@ -7,9 +7,7 @@ const server = require('../server');
 chai.use(chaiHttp);
 
 suite('Functional Tests', function() {
-
-  suite('Routing Tests', function() {
-    
+  suite('Routing Tests', function() {   
     suite('GET /api/convert => conversion object', function() {
       
       test('Convert 10L (valid input)', function(done) {
