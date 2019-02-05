@@ -26,3 +26,8 @@ li {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+#convert:hover {
+  background: blueviolet;
+  border: 1px solid blueviolet;
+}

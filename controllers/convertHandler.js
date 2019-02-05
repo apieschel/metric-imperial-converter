@@ -1,6 +1,5 @@
 function ConvertHandler() {
-  
-  // helpful answer on rounding to the fifth decimal place 
+  // Source: helpful answer on rounding to the fifth decimal place 
   // https://stackoverflow.com/questions/7312468/javascript-round-to-a-number-of-decimal-places-but-strip-extra-zeros
   
   this.getNum = function(input) {  

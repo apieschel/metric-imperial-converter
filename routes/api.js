@@ -4,7 +4,7 @@ const ConvertHandler = require('../controllers/convertHandler.js');
 
 module.exports = function (app) {
   
-  var convertHandler = new ConvertHandler();
+  const convertHandler = new ConvertHandler();
 
   app.route('/api/convert')
     .get(function (req, res){
@@ -18,8 +18,7 @@ module.exports = function (app) {
         res.json(initUnit);
       } else if (initNum === "invalid number") {
         res.json("invalid number");
-      } else {
-        
+      } else {      
           const returnNum = convertHandler.convert(initNum, initUnit);
           const returnUnit = convertHandler.getReturnUnit(initUnit);
           const initSpelled = convertHandler.spellOutUnit(initUnit);
@@ -33,7 +32,6 @@ module.exports = function (app) {
             returnUnit: returnUnit,
             string: toString
           });
-        }
-      
+        }      
     });
 };

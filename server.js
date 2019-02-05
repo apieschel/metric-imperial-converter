@@ -3,16 +3,17 @@
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const expect      = require('chai').expect;
-var cors        = require('cors');
+const cors        = require('cors');
 
-var apiRoutes         = require('./routes/api.js');
-var fccTestingRoutes  = require('./routes/fcctesting.js');
-var runner            = require('./test-runner');
+const apiRoutes         = require('./routes/api.js');
+const fccTestingRoutes  = require('./routes/fcctesting.js');
+const runner            = require('./test-runner');
 
 const helmet = require('helmet');
 const mongoose = require('mongoose');
-var app = express();
+const app = express();
 
+// security features
 app.use(helmet({
   frameguard: {
      action: 'deny'
@@ -32,9 +33,7 @@ app.use(helmet({
  }));
 
 app.use('/public', express.static(process.cwd() + '/public'));
-
 app.use(cors({origin: '*'})); //For FCC testing purposes only
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
